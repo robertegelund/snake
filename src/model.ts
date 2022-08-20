@@ -1,11 +1,12 @@
-import { returnRoutes } from "./view.js";
+import { showSnakePart, removeSnakePart } from "./view";
+
 const snake: [number, number][] = [];
 const fruits: string[][] = [];
 const noRows = 12; const noCols = 12;
 
 let snakeDir = ""; let prevSnakeDir = "";
 
-// Filling the snake and fruits arrays with arrays to making a matrix
+// Filling the fruits array with arrays to making a matrix
 for(let i=0; i<noRows; i++) { fruits[i] = [] }
 
 
@@ -13,9 +14,8 @@ for(let i=0; i<noRows; i++) { fruits[i] = [] }
 const headPos = createSnakeHead(noRows, noCols);
 const headRow = headPos[0]; const headCol = headPos[1];
 snake.push([headRow, headCol]);
-showSnakeHead(returnRoutes(), headRow, headCol);
+showSnakePart(headRow, headCol, "X");
 console.log(snake)
-
 
 
 // MODEL functions
@@ -25,19 +25,11 @@ function createSnakeHead(noRows:number, noCols:number) : [number, number] {
     return [row, col];
 }
 
-function showSnakeHead(routes:HTMLDivElement[][], row:number, col:number) {
-    routes[row][col].innerHTML = "X";
-    routes[row][col].style.background = "green";
-}
 
-function removeSnakeHead(routes:HTMLDivElement[][], row:number, col:number) {
-    routes[row][col].innerHTML = "";
-    routes[row][col].style.background = "white";
-}
 
 export function moveSnake(dir:string) {
     let headRow = snake[0][0]; let headCol = snake[0][1];
-    removeSnakeHead(returnRoutes(), headRow, headCol);
+    removeSnakePart(headRow, headCol);
     
     if(prevSnakeDir !== "SOUTH" && dir === "NORTH") {
         snakeDir = "NORTH"; headRow--;
@@ -50,6 +42,6 @@ export function moveSnake(dir:string) {
     }
 
     snake.shift(); snake.push([headRow, headCol]);
-    showSnakeHead(returnRoutes(), headRow, headCol);
+    showSnakePart(headRow, headCol, "X");
     prevSnakeDir = snakeDir; 
 }

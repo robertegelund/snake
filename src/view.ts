@@ -21,6 +21,12 @@ function drawBoard(noRows:number, noCols:number, gameboard:HTMLElement, routes:H
     }   
 }
 
-export function returnRoutes() : HTMLDivElement[][] {
-    return routes;
+export function showSnakePart(row:number, col:number, part:string) {
+    routes[row][col].innerHTML = part;
+    routes[row][col].style.background = "green";
+}
+
+export function removeSnakePart(row:number, col:number) {
+    routes[row][col].innerHTML = "";
+    routes[row][col].style.background = "white";
 }

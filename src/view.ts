@@ -9,7 +9,7 @@ for(let i=0; i<noRows; i++) { routes[i] = [] }
 // Drawing routes
 drawBoard(noRows, noCols, gameboard, routes);
 
-// View functions
+// VIEW functions
 function drawBoard(noRows:number, noCols:number, gameboard:HTMLElement, routes:HTMLDivElement[][]) {
     for(let row=0; row < noRows; row++) {
         for(let col=0; col < noCols; col++) {

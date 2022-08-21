@@ -1,21 +1,25 @@
 import { moveSnake } from "./model";
-import { returnRoutes } from "./view.js";
+
+const btn = document.querySelector(".btn");
 
 const directions = ["NORTH", "SOUTH", "WEST", "EAST"];
 
 const startRetning = directions[Math.floor(Math.random() * 4)];
-//let interval:NodeJS.Timer = setInterval(() => moveSnake(startRetning), 1000);
+let interval:NodeJS.Timer = setInterval(() => moveSnake("NORTH"), 500);
 
-function changeDir(interval:NodeJS.Timer, direction:string) {
+function changeDir(direction:string) {
     clearInterval(interval);
-    //interval = setInterval(() => moveSnake(direction), 1000);
+    interval = setInterval(() => moveSnake(direction), 500);
 }
 
-// document.addEventListener("keydown", evt => {
-//     if(evt.code === "ArrowUp") changeDir(interval, "NORTH");
-//     else if(evt.code === "ArrowDown") changeDir(interval, "SOUTH")
-//     else if(evt.code === "ArrowLeft") changeDir(interval, "WEST")
-//     else if(evt.code === "ArrowRight") changeDir(interval, "EAST")
-// })
+
+btn?.addEventListener("click", () => changeDir("WEST"));
+
+document.addEventListener("keydown", evt => {
+    if(evt.code === "ArrowUp") changeDir("NORTH");
+    else if(evt.code === "ArrowDown") changeDir("SOUTH")
+    else if(evt.code === "ArrowLeft") changeDir("WEST")
+    else if(evt.code === "ArrowRight") changeDir("EAST")
+})
 
 

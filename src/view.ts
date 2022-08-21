@@ -1,3 +1,4 @@
+const score:HTMLElement = document.querySelector(".score")
 const gameboard:HTMLElement = document.querySelector(".gameboard") as HTMLElement;
 const routes:HTMLDivElement[][] = [];
 
@@ -15,6 +16,9 @@ function drawBoard(noRows:number, noCols:number, gameboard:HTMLElement, routes:H
         for(let col=0; col < noCols; col++) {
             let route = document.createElement("div");
             route.className = "route";
+            let snakePart = document.createElement("div");
+            snakePart.className = "snake-part";
+            route.appendChild(snakePart);
             gameboard.appendChild(route);
             routes[row][col] = route;
         }
@@ -22,11 +26,26 @@ function drawBoard(noRows:number, noCols:number, gameboard:HTMLElement, routes:H
 }
 
 export function showSnakePart(row:number, col:number, part:string) {
-    routes[row][col].innerHTML = part;
-    routes[row][col].style.background = "green";
+    let snakePart = routes[row][col].firstChild
+    snakePart.innerHTML = part;
+    snakePart.style.background = "green";
+    snakePart.style.color = "white";
 }
 
 export function removeSnakePart(row:number, col:number) {
-    routes[row][col].innerHTML = "";
-    routes[row][col].style.background = "white";
+    let snakePart = routes[row][col].firstChild
+    snakePart.innerHTML = "";
+    snakePart.style.background  = "white";
+}
+
+export function showTreasure(row:number, col:number, color:string) {
+    let treasureColor = color;
+    let snakePart = routes[row][col].firstChild
+    snakePart.innerHTML = "$"
+    snakePart.style.color = treasureColor;
+    snakePart.style.fontSize = "20px"
+}
+
+export function updateScore(newScore:number) {
+    score.innerHTML = "Score: " + newScore.toString();
 }

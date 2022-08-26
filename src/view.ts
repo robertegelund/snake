@@ -28,7 +28,7 @@ function drawBoard(noRows:number, noCols:number, gameboard:HTMLElement, routes:H
 export function showSnakePart(row:number, col:number, part:string) {
     let snakePart = routes[row][col].firstChild
     snakePart.innerHTML = part;
-    snakePart.style.background = "green";
+    snakePart.style.background = "#112233";
     snakePart.style.color = "white";
 }
 
@@ -41,11 +41,16 @@ export function removeSnakePart(row:number, col:number) {
 export function showTreasure(row:number, col:number, color:string) {
     let treasureColor = color;
     let snakePart = routes[row][col].firstChild
-    snakePart.innerHTML = "$"
+    snakePart.innerHTML = "&#128176"
     snakePart.style.color = treasureColor;
-    snakePart.style.fontSize = "20px"
+    snakePart.style.fontSize = "25px"
 }
 
-export function updateScore(newScore:number) {
+export function showScore(newScore:number) {
     score.innerHTML = "Score: " + newScore.toString();
+}
+
+export function gameOver() {
+    score.innerHTML = "GAME OVER"
+
 }

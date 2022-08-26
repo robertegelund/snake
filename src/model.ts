@@ -1,10 +1,10 @@
-import { showSnakePart, removeSnakePart, showTreasure, updateScore} from "./view";
+import { showSnakePart, removeSnakePart, showTreasure, showScore, gameOver } from "./view";
 import { stopTheSnake } from "./controller";
 
 const snake: [number, number][] = [];
 const treasures: [number, number, string][] = [];
 let score = 0;
-let gameOver = false;
+let isGameOver = false;
 
 const noRows = 12; const noCols = 12; const noTreasures = 9;
 let snakeDir = ""; let prevSnakeDir = "";
@@ -17,7 +17,7 @@ showSnakePart(headRow, headCol, "O");
 
 
 // Create and show the treasures
-for(let i=0; i < 3; i++) {
+for(let i=0; i < 2; i++) {
     createAndShowTreasure("red");
     createAndShowTreasure("blue");
     createAndShowTreasure("green");
@@ -44,7 +44,6 @@ export function moveSnake(dir:string) {
     let headRow = head[0]; let headCol = head[1];
     let backRow = back[0]; let backCol = back[1];
 
-    
     if(prevSnakeDir !== "SOUTH" && dir === "NORTH") {
         snakeDir = "NORTH"; headRow--;
     } else if(prevSnakeDir !== "NORTH" && dir === "SOUTH") {
@@ -55,20 +54,19 @@ export function moveSnake(dir:string) {
         snakeDir = "WEST"; headCol--;
     }
 
-
-    
     // Oppdaterer bakre dels posisjon, sletter delen og flytter fremst
     back[0] = headRow; back[1] = headCol;
     let bakreDel = snake.pop(); snake.unshift(bakreDel);
+
+    if(back[0] === noRows || back[1] === noCols || back[0] === -1 || back[1] === -1) {
+        stopTheSnake(); gameOver(); return;
+    }
+
     removeSnakePart(backRow, backCol);
     showSnakePart(back[0], back[1], "O");
     
     // Viktig at tidligere fremfre del naa vises som X fremfor O
     if(snake.length > 1) showSnakePart(snake[1][0], snake[1][1], "");
-
-    // if(headRow === noRows-1 || headCol === noCols-1) {
-    //     stopTheSnake(); return;
-    // }
    
     headCrashControl();
     treasureControl(headRow, headCol, backRow, backCol);
@@ -79,7 +77,7 @@ export function moveSnake(dir:string) {
 function headCrashControl() {
     snake.forEach(part => {
         if(part[0] === snake[0][0] && part[1] === snake[0][1] && snake.indexOf(part) != 0) {
-            gameOver = true; stopTheSnake();
+            stopTheSnake(); gameOver();
         }
     })
 }
@@ -94,7 +92,11 @@ function treasureControl(headRow:number, headCol:number,
             if(treasure[2] === "blue") createAndShowTreasure("blue");
             else if(treasure[2] === "red") createAndShowTreasure("red");
             else if(treasure[2] === "green") createAndShowTreasure("green");
-            updateScore(++score);
+            updateScore();
         }
     })
+}
+
+export function updateScore() {
+    showScore(++score);
 }

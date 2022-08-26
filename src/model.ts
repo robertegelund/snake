@@ -1,8 +1,10 @@
 import { showSnakePart, removeSnakePart, showTreasure, updateScore} from "./view";
+import { stopTheSnake } from "./controller";
 
 const snake: [number, number][] = [];
 const treasures: [number, number, string][] = [];
 let score = 0;
+let gameOver = false;
 
 const noRows = 12; const noCols = 12; const noTreasures = 9;
 let snakeDir = ""; let prevSnakeDir = "";
@@ -41,6 +43,7 @@ export function moveSnake(dir:string) {
 
     let headRow = head[0]; let headCol = head[1];
     let backRow = back[0]; let backCol = back[1];
+
     
     if(prevSnakeDir !== "SOUTH" && dir === "NORTH") {
         snakeDir = "NORTH"; headRow--;
@@ -52,6 +55,8 @@ export function moveSnake(dir:string) {
         snakeDir = "WEST"; headCol--;
     }
 
+
+    
     // Oppdaterer bakre dels posisjon, sletter delen og flytter fremst
     back[0] = headRow; back[1] = headCol;
     let bakreDel = snake.pop(); snake.unshift(bakreDel);
@@ -59,11 +64,26 @@ export function moveSnake(dir:string) {
     showSnakePart(back[0], back[1], "O");
     
     // Viktig at tidligere fremfre del naa vises som X fremfor O
-    if(snake.length > 1) showSnakePart(snake[1][0], snake[1][1], "");  
-    
+    if(snake.length > 1) showSnakePart(snake[1][0], snake[1][1], "");
+
+    // if(headRow === noRows-1 || headCol === noCols-1) {
+    //     stopTheSnake(); return;
+    // }
+   
+    headCrashControl();
     treasureControl(headRow, headCol, backRow, backCol);
     prevSnakeDir = snakeDir;
 }
+
+
+function headCrashControl() {
+    snake.forEach(part => {
+        if(part[0] === snake[0][0] && part[1] === snake[0][1] && snake.indexOf(part) != 0) {
+            gameOver = true; stopTheSnake();
+        }
+    })
+}
+
 
 function treasureControl(headRow:number, headCol:number, 
                          backRow:number, backCol:number) {

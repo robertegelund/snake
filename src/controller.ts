@@ -5,11 +5,15 @@ const btn = document.querySelector(".btn");
 const directions = ["NORTH", "SOUTH", "WEST", "EAST"];
 
 const startRetning = directions[Math.floor(Math.random() * 4)];
-let interval:NodeJS.Timer = setInterval(() => moveSnake("NORTH"), 500);
+let interval:NodeJS.Timer = setInterval(() => moveSnake(startRetning), 500);
 
 function changeDir(direction:string) {
     clearInterval(interval);
     interval = setInterval(() => moveSnake(direction), 500);
+}
+
+export function stopTheSnake() {
+    clearInterval(interval);
 }
 
 

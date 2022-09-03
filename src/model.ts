@@ -94,7 +94,6 @@ function treasureControl(headRow:number, headCol:number,
             else if(treasure[2] === "red") createAndShowTreasure("red");
             else if(treasure[2] === "green") createAndShowTreasure("green");
             speed-=20;
-            console.log(speed);
             updateScore();
             changeSpeed(snakeDir);
         }

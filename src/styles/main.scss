@@ -49,5 +49,9 @@ body {
     height: 45px; width: 45px;
     border-radius: 50%;
     border: 1px solid black;
-    font-size: 25px;
+    font-size: 15px;
+
+    &:active {
+        background: #112233; color: white;
+    }
 }

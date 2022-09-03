@@ -1,9 +1,10 @@
 import { showSnakePart, removeSnakePart, showTreasure, showScore, gameOver } from "./view";
-import { stopTheSnake } from "./controller";
+import { stopTheSnake, changeSpeed } from "./controller";
 
-const snake: [number, number][] = [];
+const snake: ([number, number][]) = [];
 const treasures: [number, number, string][] = [];
 let score = 0;
+let speed = 500;
 let isGameOver = false;
 
 const noRows = 12; const noCols = 12; const noTreasures = 9;
@@ -38,7 +39,7 @@ function createAndShowTreasure(color:string) {
 }
 
 export function moveSnake(dir:string) {
-    let length = snake.length; 
+    let length = snake!.length; 
     let head = snake[0]; let back = snake[length-1]
 
     let headRow = head[0]; let headCol = head[1];
@@ -56,7 +57,7 @@ export function moveSnake(dir:string) {
 
     // Oppdaterer bakre dels posisjon, sletter delen og flytter fremst
     back[0] = headRow; back[1] = headCol;
-    let bakreDel = snake.pop(); snake.unshift(bakreDel);
+    let bakreDel = snake.pop(); snake.unshift(bakreDel!);
 
     if(back[0] === noRows || back[1] === noCols || back[0] === -1 || back[1] === -1) {
         stopTheSnake(); gameOver(); return;
@@ -77,7 +78,7 @@ export function moveSnake(dir:string) {
 function headCrashControl() {
     snake.forEach(part => {
         if(part[0] === snake[0][0] && part[1] === snake[0][1] && snake.indexOf(part) != 0) {
-            stopTheSnake(); gameOver();
+            stopTheSnake(); gameOver(); isGameOver = true;
         }
     })
 }
@@ -92,11 +93,22 @@ function treasureControl(headRow:number, headCol:number,
             if(treasure[2] === "blue") createAndShowTreasure("blue");
             else if(treasure[2] === "red") createAndShowTreasure("red");
             else if(treasure[2] === "green") createAndShowTreasure("green");
+            speed-=20;
+            console.log(speed);
             updateScore();
+            changeSpeed(snakeDir);
         }
     })
 }
 
 export function updateScore() {
     showScore(++score);
+}
+
+export function getSpeed() {
+    return speed;
+}
+
+export function statusGameOver() {
+    return isGameOver;
 }

@@ -1,4 +1,4 @@
-const score:HTMLElement = document.querySelector(".score")
+const score:HTMLElement = document.querySelector(".score") as HTMLElement
 const gameboard:HTMLElement = document.querySelector(".gameboard") as HTMLElement;
 const routes:HTMLDivElement[][] = [];
 
@@ -26,21 +26,21 @@ function drawBoard(noRows:number, noCols:number, gameboard:HTMLElement, routes:H
 }
 
 export function showSnakePart(row:number, col:number, part:string) {
-    let snakePart = routes[row][col].firstChild
+    let snakePart = routes[row][col].firstChild as HTMLElement
     snakePart.innerHTML = part;
     snakePart.style.background = "#112233";
     snakePart.style.color = "white";
 }
 
 export function removeSnakePart(row:number, col:number) {
-    let snakePart = routes[row][col].firstChild
+    let snakePart = routes[row][col].firstChild as HTMLElement
     snakePart.innerHTML = "";
     snakePart.style.background  = "white";
 }
 
 export function showTreasure(row:number, col:number, color:string) {
     let treasureColor = color;
-    let snakePart = routes[row][col].firstChild
+    let snakePart = routes[row][col].firstChild as HTMLElement
     snakePart.innerHTML = "&#128176"
     snakePart.style.color = treasureColor;
     snakePart.style.fontSize = "25px"
@@ -52,5 +52,4 @@ export function showScore(newScore:number) {
 
 export function gameOver() {
     score.innerHTML = "GAME OVER"
-
 }

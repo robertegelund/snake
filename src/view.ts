@@ -43,7 +43,7 @@ export function showTreasure(row:number, col:number, color:string) {
     let snakePart = routes[row][col].firstChild as HTMLElement
     snakePart.innerHTML = "&#128176"
     snakePart.style.color = treasureColor;
-    snakePart.style.fontSize = "25px"
+    snakePart.style.fontSize = "18px"
 }
 
 export function showScore(newScore:number) {

@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  height: 100vh;\n  width: 80vw;\n  margin: 0 auto;\n}\n\n.panel {\n  background: white;\n  color: grey;\n  box-shadow: 2px 2px 5px grey;\n  border-radius: 5px;\n  width: 50vw;\n  height: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 30px;\n  margin-bottom: 50px;\n  font-family: sans-serif;\n}\n\n.gameboard {\n  display: grid;\n  box-shadow: 2px 2px 5px grey;\n  grid-template-columns: repeat(12, 1fr);\n  grid-template-rows: repeat(12, 1fr);\n  margin-bottom: 30px;\n}\n\n.route {\n  height: 50px;\n  width: 50px;\n  border: 0.1px black solid;\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.snake-part {\n  height: 40px;\n  width: 40px;\n  font-size: 25px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.buttons {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n\n.btn {\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  border: 1px solid black;\n  font-size: 25px;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA;EACI,SAAA;EAAW,UAAA;AAEf;;AACA;EACI,aAAA;EAAe,uBAAA;EACf,sBAAA;EACA,mBAAA;EAAqB,aAAA;EAAe,WAAA;EACpC,cAAA;AAKJ;;AAFA;EACI,iBAAA;EAAmB,WAAA;EACnB,4BAAA;EACA,kBAAA;EACA,WAAA;EAAa,YAAA;EACb,aAAA;EAAe,mBAAA;EAAqB,uBAAA;EACpC,eAAA;EAAiB,mBAAA;EAAqB,uBAAA;AAW1C;;AARA;EACI,aAAA;EAAe,4BAAA;EACf,sCAAA;EACA,mCAAA;EACA,mBAAA;AAYJ;;AATA;EACI,YAAA;EAAc,WAAA;EACd,yBAAA;EACA,YAAA;EACA,aAAA;EAAe,uBAAA;EAAyB,mBAAA;AAe5C;;AAZA;EACI,YAAA;EAAc,WAAA;EAAa,eAAA;EAC3B,kBAAA;EACA,aAAA;EAAe,mBAAA;EAAqB,uBAAA;AAmBxC;;AAhBA;EACI,aAAA;EACA,qCAAA;AAmBJ;;AAhBA;EACI,YAAA;EAAc,WAAA;EACd,kBAAA;EACA,uBAAA;EACA,eAAA;AAoBJ","sourcesContent":["* {\r\n    margin: 0; padding: 0;\r\n}\r\n\r\nbody {\r\n    display: flex; justify-content: center;\r\n    flex-direction: column;\r\n    align-items: center; height: 100vh; width: 80vw;\r\n    margin: 0 auto;\r\n}\r\n\r\n.panel {\r\n    background: white; color: grey;\r\n    box-shadow: 2px 2px 5px grey;\r\n    border-radius: 5px;\r\n    width: 50vw; height: 60px;\r\n    display: flex; align-items: center; justify-content: center;\r\n    font-size: 30px; margin-bottom: 50px; font-family: sans-serif;\r\n}\r\n\r\n.gameboard {\r\n    display: grid; box-shadow: 2px 2px 5px grey;\r\n    grid-template-columns: repeat(12, 1fr);\r\n    grid-template-rows: repeat(12, 1fr);\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.route {\r\n    height: 50px; width: 50px;\r\n    border: 0.1px black solid;\r\n    color: white;\r\n    display: flex; justify-content: center; align-items: center;\r\n}\r\n\r\n.snake-part {\r\n    height: 40px; width: 40px; font-size: 25px;\r\n    border-radius: 50%;\r\n    display: flex; align-items: center; justify-content: center;\r\n}\r\n\r\n.buttons {\r\n    display: grid;\r\n    grid-template-columns: repeat(3, 1fr);\r\n}\r\n\r\n.btn {\r\n    height: 45px; width: 45px;\r\n    border-radius: 50%;\r\n    border: 1px solid black;\r\n    font-size: 25px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  height: 100vh;\n  width: 80vw;\n  margin: 0 auto;\n}\n\n.panel {\n  background: white;\n  color: grey;\n  box-shadow: 2px 2px 5px grey;\n  border-radius: 5px;\n  width: 50vw;\n  height: 70px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 30px;\n  margin-bottom: 30px;\n  font-family: sans-serif;\n}\n\n.gameboard {\n  width: 90vw;\n  height: 90vw;\n  max-width: 750px;\n  max-height: 750px;\n  display: grid;\n  box-shadow: 2px 2px 5px grey;\n  grid-template-columns: repeat(12, 1fr);\n  grid-template-rows: repeat(12, 1fr);\n  margin-bottom: 30px;\n}\n\n.route {\n  min-height: 20px;\n  min-width: 20px;\n  border: 0.1px black solid;\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.snake-part {\n  min-height: 80%;\n  min-width: 80%;\n  font-size: 18px;\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.buttons {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n\n.btn {\n  height: 45px;\n  width: 45px;\n  border-radius: 50%;\n  border: 1px solid black;\n  font-size: 25px;\n}", "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAAA;EACI,SAAA;EAAW,UAAA;AAEf;;AACA;EACI,aAAA;EAAe,uBAAA;EACf,sBAAA;EACA,mBAAA;EAAqB,aAAA;EAAe,WAAA;EACpC,cAAA;AAKJ;;AAFA;EACI,iBAAA;EAAmB,WAAA;EACnB,4BAAA;EACA,kBAAA;EACA,WAAA;EAAa,YAAA;EACb,aAAA;EAAe,mBAAA;EAAqB,uBAAA;EACpC,eAAA;EAAiB,mBAAA;EAAqB,uBAAA;AAW1C;;AARA;EACI,WAAA;EAAa,YAAA;EACb,gBAAA;EAAkB,iBAAA;EAClB,aAAA;EAAe,4BAAA;EACf,sCAAA;EACA,mCAAA;EACA,mBAAA;AAcJ;;AAXA;EACI,gBAAA;EAAkB,eAAA;EAClB,yBAAA;EACA,YAAA;EACA,aAAA;EAAe,uBAAA;EAAyB,mBAAA;AAiB5C;;AAdA;EACI,eAAA;EAAiB,cAAA;EAAgB,eAAA;EACjC,kBAAA;EACA,aAAA;EAAe,mBAAA;EAAqB,uBAAA;AAqBxC;;AAlBA;EACI,aAAA;EACA,qCAAA;AAqBJ;;AAlBA;EACI,YAAA;EAAc,WAAA;EACd,kBAAA;EACA,uBAAA;EACA,eAAA;AAsBJ","sourcesContent":["* {\r\n    margin: 0; padding: 0;\r\n}\r\n\r\nbody {\r\n    display: flex; justify-content: center;\r\n    flex-direction: column;\r\n    align-items: center; height: 100vh; width: 80vw;\r\n    margin: 0 auto;\r\n}\r\n\r\n.panel {\r\n    background: white; color: grey;\r\n    box-shadow: 2px 2px 5px grey;\r\n    border-radius: 5px;\r\n    width: 50vw; height: 70px;\r\n    display: flex; align-items: center; justify-content: center;\r\n    font-size: 30px; margin-bottom: 30px; font-family: sans-serif;\r\n}\r\n\r\n.gameboard {\r\n    width: 90vw; height: 90vw;\r\n    max-width: 750px; max-height: 750px; \r\n    display: grid; box-shadow: 2px 2px 5px grey;\r\n    grid-template-columns: repeat(12, 1fr);\r\n    grid-template-rows: repeat(12, 1fr);\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.route {\r\n    min-height: 20px; min-width: 20px;\r\n    border: 0.1px black solid;\r\n    color: white;\r\n    display: flex; justify-content: center; align-items: center;\r\n}\r\n\r\n.snake-part {\r\n    min-height: 80%; min-width: 80%; font-size: 18px;\r\n    border-radius: 50%;\r\n    display: flex; align-items: center; justify-content: center;\r\n}\r\n\r\n.buttons {\r\n    display: grid;\r\n    grid-template-columns: repeat(3, 1fr);\r\n}\r\n\r\n.btn {\r\n    height: 45px; width: 45px;\r\n    border-radius: 50%;\r\n    border: 1px solid black;\r\n    font-size: 25px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -555,12 +555,16 @@ function startGame() {
     interval = setInterval(() => (0,_model__WEBPACK_IMPORTED_MODULE_0__.moveSnake)(startRetning), 500);
 }
 function changeSpeed(direction) {
-    clearInterval(interval);
-    interval = setInterval(() => (0,_model__WEBPACK_IMPORTED_MODULE_0__.moveSnake)(direction), (0,_model__WEBPACK_IMPORTED_MODULE_0__.getSpeed)());
+    if (!(0,_model__WEBPACK_IMPORTED_MODULE_0__.statusGameOver)()) {
+        clearInterval(interval);
+        interval = setInterval(() => (0,_model__WEBPACK_IMPORTED_MODULE_0__.moveSnake)(direction), (0,_model__WEBPACK_IMPORTED_MODULE_0__.getSpeed)());
+    }
 }
 function changeDir(direction) {
-    clearInterval(interval);
-    interval = setInterval(() => (0,_model__WEBPACK_IMPORTED_MODULE_0__.moveSnake)(direction), (0,_model__WEBPACK_IMPORTED_MODULE_0__.getSpeed)());
+    if (!(0,_model__WEBPACK_IMPORTED_MODULE_0__.statusGameOver)()) {
+        clearInterval(interval);
+        interval = setInterval(() => (0,_model__WEBPACK_IMPORTED_MODULE_0__.moveSnake)(direction), (0,_model__WEBPACK_IMPORTED_MODULE_0__.getSpeed)());
+    }
 }
 function stopTheSnake() {
     clearInterval(interval);
@@ -594,6 +598,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getSpeed": () => (/* binding */ getSpeed),
 /* harmony export */   "moveSnake": () => (/* binding */ moveSnake),
+/* harmony export */   "statusGameOver": () => (/* binding */ statusGameOver),
 /* harmony export */   "updateScore": () => (/* binding */ updateScore)
 /* harmony export */ });
 /* harmony import */ var _view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view */ "./src/view.ts");
@@ -658,7 +663,7 @@ function moveSnake(dir) {
         snakeDir = "WEST";
         headCol--;
     }
-    // Oppdaterer bakre dels posisjon, sletter delen og flytter fremst
+    // Update the snake's back position, deletes it and moves it in front
     back[0] = headRow;
     back[1] = headCol;
     let bakreDel = snake.pop();
@@ -670,7 +675,7 @@ function moveSnake(dir) {
     }
     (0,_view__WEBPACK_IMPORTED_MODULE_0__.removeSnakePart)(backRow, backCol);
     (0,_view__WEBPACK_IMPORTED_MODULE_0__.showSnakePart)(back[0], back[1], "O");
-    // Viktig at tidligere fremfre del naa vises som X fremfor O
+    // Important that the former front part is drawn as X instead of O
     if (snake.length > 1)
         (0,_view__WEBPACK_IMPORTED_MODULE_0__.showSnakePart)(snake[1][0], snake[1][1], "");
     headCrashControl();
@@ -682,6 +687,7 @@ function headCrashControl() {
         if (part[0] === snake[0][0] && part[1] === snake[0][1] && snake.indexOf(part) != 0) {
             (0,_controller__WEBPACK_IMPORTED_MODULE_1__.stopTheSnake)();
             (0,_view__WEBPACK_IMPORTED_MODULE_0__.gameOver)();
+            isGameOver = true;
         }
     });
 }
@@ -708,6 +714,9 @@ function updateScore() {
 }
 function getSpeed() {
     return speed;
+}
+function statusGameOver() {
+    return isGameOver;
 }
 
 
@@ -768,7 +777,7 @@ function showTreasure(row, col, color) {
     let snakePart = routes[row][col].firstChild;
     snakePart.innerHTML = "&#128176";
     snakePart.style.color = treasureColor;
-    snakePart.style.fontSize = "25px";
+    snakePart.style.fontSize = "18px";
 }
 function showScore(newScore) {
     score.innerHTML = "Score: " + newScore.toString();
@@ -873,4 +882,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle2f2beaacd49c703fc8f1.js.map
+//# sourceMappingURL=bundle360eece55368340a48f1.js.map

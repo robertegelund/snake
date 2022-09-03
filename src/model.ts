@@ -55,7 +55,7 @@ export function moveSnake(dir:string) {
         snakeDir = "WEST"; headCol--;
     }
 
-    // Oppdaterer bakre dels posisjon, sletter delen og flytter fremst
+    // Update the snake's back position, deletes it and moves it in front
     back[0] = headRow; back[1] = headCol;
     let bakreDel = snake.pop(); snake.unshift(bakreDel!);
 
@@ -66,7 +66,7 @@ export function moveSnake(dir:string) {
     removeSnakePart(backRow, backCol);
     showSnakePart(back[0], back[1], "O");
     
-    // Viktig at tidligere fremfre del naa vises som X fremfor O
+    // Important that the former front part is drawn as X instead of O
     if(snake.length > 1) showSnakePart(snake[1][0], snake[1][1], "");
    
     headCrashControl();

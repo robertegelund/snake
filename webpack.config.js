@@ -56,7 +56,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Foreign Aid Kit",
+            title: "Snake",
             filename: "index.html",
             template: "src/template.html"
         }),

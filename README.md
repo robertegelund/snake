@@ -7,5 +7,5 @@
 ## Noen forbedringer som skal implementeres
 - Funksjon for å starte spillet samt for å starte et nytt spill ved gameover
 - Spillet skal kunne styres med touch i tillegg til piltaster og buttons
-- Sørge for at pengesekkene/skattene kun opprettes der det ikke er slangedeler
+- Sørge for at pengesekkene/skattene kun opprettes der det ikke er slangedeler eller andre skatter
 - Sørge for at pengesekkene/skattene slettes fra container, for å unngå duplikater

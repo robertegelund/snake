@@ -6,7 +6,7 @@
 - Det kan prøves ved å gå til: https://breaksnake-7f439.web.app/
 
 ## Noen forbedringer som skal implementeres
-- Funksjon for å starte spillet samt for å starte et nytt spill ved gameover
+- Funksjon for å starte spillet samt for å starte et nytt spill ved gameover (uten å refreshe)
 - Spillet skal kunne styres med touch i tillegg til piltaster og buttons
 - Sørge for at pengesekkene/skattene kun opprettes der det ikke er slangedeler eller andre skatter
 - Sørge for at pengesekkene/skattene slettes fra container, for å unngå duplikater
